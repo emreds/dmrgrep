@@ -14,15 +14,11 @@ fn main() {
         process::exit(1);
     });
 
-    println!("Searching for: {}, In: {} ", config.query, config.file_path);
-
     let contents = dmrgrep::run(config);
 
     if let Err(e) = contents {
         println!("Application error: {}", e);
         process::exit(1);
-    } else {
-        println!("This is the file content: {:?}", contents)
     }
     
 }
